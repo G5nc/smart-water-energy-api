@@ -2,7 +2,7 @@
 
 API REST em Spring Boot para monitoramento da estação de água e energia.
 
-## Integrantes
+## Integrante
 - Gustavo Nobre Coppola (RM561423)
 
 ## Como Executar
