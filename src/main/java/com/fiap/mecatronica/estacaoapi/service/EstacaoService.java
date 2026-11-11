@@ -8,6 +8,11 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Random;
 
+import com.fiap.mecatronica.estacaoapi.model.PrevisaoDTO;
+import tools.jackson.databind.ObjectMapper;
+import org.springframework.core.io.ClassPathResource;
+import java.io.IOException;
+
 @Service
 public class EstacaoService {
 
@@ -56,5 +61,17 @@ public class EstacaoService {
             return null;
         }
         return todas.get(todas.size() - 1);
+    }
+
+    public PrevisaoDTO obterPrevisao() {
+        try {
+            // Lê o arquivo JSON que está na pasta resources
+            ClassPathResource resource = new ClassPathResource("previsao_estacao.json");
+            ObjectMapper mapper = new ObjectMapper();
+            return mapper.readValue(resource.getInputStream(), PrevisaoDTO.class);
+        } catch (IOException e) {
+            System.out.println("Erro ao ler o JSON de previsão: " + e.getMessage());
+            return null;
+        }
     }
 }
