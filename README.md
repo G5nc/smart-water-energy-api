@@ -4,7 +4,6 @@ API REST em Spring Boot para monitoramento da estação de água e energia.
 
 ## Integrantes
 - Gustavo Nobre Coppola (RM561423)
-- Pedro Sinnes martinez (RM566017)
 
 ## Como Executar
 1. Clone o repositório.
